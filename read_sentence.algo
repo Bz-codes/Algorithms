@@ -2,17 +2,17 @@ ALGORITHM SENTENCE
 
 VAR
 
-   nbv,nbw,nbc:= INTEGER ;
+   num-v,num_w,num_c:= INTEGER ;
 
    sentc:= STRING[] ;
 
 BEGIN
 
-  nbc:= 0 ;
+  num_c:= 0 ;
 
-  nbw:= 1 ;
+  num_w:= 1 ;
 
-  nbv:= 0;
+  num_v:= 0;
 
   write("type the sentence")
 
@@ -22,26 +22,26 @@ REPEAT
 
    
 
-   IF (sentc[nbc]=" ") THEN
+   IF (sentc[num_c]=" ") THEN
 
-       nbw:=nbw+1 ;
-
-   END_IF
-
-  IF (sentc[nbc] in ["a","e","u","i","o","y"]) THEN
-
-   nbv:= nbv +1 ;
+       num_w:=num_w+1 ;
 
    END_IF
 
-   nbc := nbc+1 ;
+  IF (sentc[num_c] in ["a","e","i","","o","u"]) THEN
 
-UNTIL (sentc[nbc]=".")
+   num_v:= num_v +1 ;
 
-write( "le nombre de caractere est ",nbc+1 )
+   END_IF
 
-write (" le nombre de mot est ",nbw)
+   num_c := num_c+1 ;
 
-write (" le nombre de voyelle est ",nbv)
+UNTIL (sentc[num_c]=".")
+
+write( "The number of characters are ", num_c )
+
+write (" The number of words are ", num_w)
+
+write (" The number of vowels are ", num_v)
 
 END
